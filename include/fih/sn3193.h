@@ -1,0 +1,85 @@
+#ifndef __SN3193_H__
+#define __SN3193_H__
+
+#define SN3193_B1			1//green
+#define SN3193_B2			2//blue
+#define SN3193_B3			3//red
+/* Target and Start Times Reg */
+#define SN3193_TARGET_START_TIMES_TT0	1
+
+/* Regs Map */
+#define SN3193_BANKEN				0x00
+#define SN3193_BASEBANK				0x03
+#define SC668_BLEN					0x00
+#define SC668_BANKEN				0x01
+#define	SC668_FADEEN_B1				0x02
+#define	SC668_FADEEN_B2				SC668_FADEEN_B1 + SC668_B2
+#define	SC668_FADEEN_B3				SC668_FADEEN_B1 + SC668_B3
+#define	SC668_FADEEN_B4				SC668_FADEEN_B1 + SC668_B4
+#define	SC668_BLINKEN_B1			0x06
+#define	SC668_BLINKEN_B2			SC668_BLINKEN_B1 + SC668_B2
+#define	SC668_BLINKEN_B3			SC668_BLINKEN_B1 + SC668_B3
+#define	SC668_BLINKEN_B4			SC668_BLINKEN_B1 + SC668_B4
+#define SC668_LIGHTING_EFFECT		0x0E
+#define SC668_EFFECT_RATES			0x0F
+#define SC668_TARGET_START_TIMES_G1	0x10
+#define SC668_TARGET_START_TIMES_G2	0x11
+#define SC668_ADP_OLE				0x16
+
+/* Backlight Current */
+#define SN3193_BLCURR_0MA				0x00
+#define SN3193_BLCURR_0P05MA			0x01
+#define SN3193_BLCURR_0P1MA				0x02
+#define SN3193_BLCURR_0P2MA				0x03
+#define SN3193_BLCURR_0P5MA				0x04
+#define SN3193_BLCURR_1MA				0x05
+#define SN3193_BLCURR_1P5MA				0x06
+#define SN3193_BLCURR_2MA				0x07
+#define SN3193_BLCURR_2P5MA				0x08	
+#define SN3193_BLCURR_3MA				0x09
+#define SN3193_BLCURR_3P5MA				0x0A	
+#define SN3193_BLCURR_4MA				0x0B
+#define SN3193_BLCURR_4P5MA				0x0C
+#define SN3193_BLCURR_5MA				0x0D
+#define SN3193_BLCURR_6MA				0x0E
+#define SN3193_BLCURR_7MA				0x0F
+#define SN3193_BLCURR_8MA				0x10
+#define SN3193_BLCURR_9MA				0x11
+#define SN3193_BLCURR_10MA				0x12
+#define SN3193_BLCURR_11MA				0x13
+#define SN3193_BLCURR_12MA				0x14
+#define SN3193_BLCURR_13MA				0x15
+#define SN3193_BLCURR_14MA				0x16
+#define SN3193_BLCURR_15MA				0x17
+#define SN3193_BLCURR_16MA				0x18
+#define SN3193_BLCURR_17MA				0x19
+#define SN3193_BLCURR_18MA				0x1A
+#define SN3193_BLCURR_19MA				0x1B
+#define SN3193_BLCURR_20MA				0x1C
+#define SN3193_BLCURR_21MA				0x1D
+#define SN3193_BLCURR_23MA				0x1E
+#define SN3193_BLCURR_25MA				0x1F
+
+/*modify by hjj 10-28*/
+#define SN3193_TIME_0MS				    0x0
+#define SN3193_TIME_130MS				0x1
+#define SN3193_TIME_260MS				0x2
+#define SN3193_TIME_520MS				0x3
+#define SN3193_TIME_1040MS				0x4
+#define SN3193_TIME_2080MS				0x5
+#define SN3193_TIME_4160MS				0x6
+#define SN3193_TIME_8320MS				0x7
+#define SN3193_TIME_16440MS				0x8
+
+#define SN3193_LED_RED		0x0
+#define SN3193_LED_GREEN	0x1
+#define SN3193_LED_BLUE		0x2
+#define SN3193_LED_MAX		0x3
+
+struct sn3193_platform_data {
+	unsigned char en_pin;
+	//unsigned char pwm_pin;
+     u8 chg_led_ctrl_pin;
+};
+
+#endif
