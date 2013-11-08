@@ -1,0 +1,1 @@
+obj-$(CONFIG_LEDS_SC668)		+= leds-sc668.o

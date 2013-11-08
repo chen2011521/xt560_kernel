@@ -1,0 +1,112 @@
+#
+# Input device configuration
+#
+
+menu "Sensor devices support"
+	depends on INPUT_SENSORS
+
+menuconfig INPUT_ACCELEROMETER
+        bool "Accelerometer sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/accelerometer device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/accelerometer/Kconfig"
+
+menuconfig INPUT_GEOMAGNETIC
+        bool "Geomagnetic sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/geomagnetic device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/geomagnetic/Kconfig"
+
+menuconfig INPUT_GYROSCOPE
+        bool "Gyroscope sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/gyroscope device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/gyroscope/Kconfig"
+
+menuconfig INPUT_LIGHT
+        bool "Light interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/light device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/light/Kconfig"
+
+menuconfig INPUT_ORIENTATION_YAMAHA
+        bool "Orientation sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/orientation device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/orientation/Kconfig"
+
+menuconfig INPUT_PRESSURE
+        bool "Pressure sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/pressure device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/pressure/Kconfig"
+
+menuconfig INPUT_PROXIMITY
+        bool "Proximity sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/proximity device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/proximity/Kconfig"
+
+menuconfig INPUT_TEMPERATURE
+        bool "Temperature sensor interface"
+        depends on INPUT_SENSORS
+        ---help---
+                Say Y here if you want your ecompass to be accessible as char device
+                - /dev/input/sensors/temperature device.
+
+                If unsure, say N.
+
+source "drivers/fih/sensors/temperature/Kconfig"
+
+menuconfig INPUT_LPSENSOR
+	bool "FIH LPsensor interface"
+        depends on INPUT_SENSORS
+	---help---
+	  Say Y here if you want your gsensor to be accessible as char device
+	  - /dev/input/sensors/proximitysensor device.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose Y here: the
+	  module will be called psensor.
+
+source "drivers/fih/sensors/lightproxisensor/Kconfig"
+source "drivers/fih/sensors/SenseTek_proximity/Kconfig"
+
+endmenu
+

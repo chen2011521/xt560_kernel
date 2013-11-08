@@ -1,0 +1,35 @@
+#
+# Light and Proximity drivers configuration
+#
+
+#menuconfig INPUT_LPSENSOR
+#	bool "FIH Light and Proximity SENSOR devices"
+#	help
+#	  Say Y here, and a list of sensors input drivers will be displayed.
+#	  Everything that didn't fit into the other categories is here. This option
+#	  doesn't affect the kernel.
+#
+#	  If unsure, say Y.
+
+if INPUT_LPSENSOR
+
+#by WillChen 2009.05.15 FIH_Fxx
+config SENSORS_LPSCM3602
+	tristate "LPSCM3602 controller"
+         depends on I2C&&INPUT_SENSORS
+	help
+		Say Y here if you want to enable LPSENSOR PSCM3602 driver.	  
+
+config SENSORS_LTR502ALS
+	tristate "LTR502ALS controller"
+         depends on I2C&&INPUT_SENSORS
+	help
+	        Say Y here if you want to enable LPSENSOR LTR502ALS driver.
+
+config SENSORS_YAS_CM3623
+	tristate "cm3623 LPS sensors controller(For YAS)"
+         depends on I2C&&INPUT_SENSORS
+	help
+	        Say Y here if you want to enable cm3623 LPS sensors(For YAS).
+                                	  
+endif
