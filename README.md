@@ -8,4 +8,4 @@ $cd kernel
 
 $make or 
 
-$make IRM_defconfig
+$make xt560_defconfig
